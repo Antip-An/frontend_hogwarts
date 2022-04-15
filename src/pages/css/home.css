@@ -1,0 +1,14 @@
+.carousel-caption #logo {
+    width: 250px!important;
+}
+
+#foto {
+    height: 75vh;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+}
