@@ -3,6 +3,7 @@ import { useLocation, useNavigate  } from "react-router";
 import { Link } from "react-router-dom";
 import "./header.css";
 import logo from "../assets/logo.png";
+import photo from "../assets/4.png";
 import useToken from "../hooks/useToken";
 
 const Header = () => {
@@ -29,15 +30,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/myCourses" disabled={pathname === "/myCourses"}>Мои курсы</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        {!loggedIn ? (
-          <Nav.Link as={Link} to="/login" disabled={pathname === "/login"}>
-            Вход
-          </Nav.Link>
-        ) : (
-          <Nav.Link onClick={onLogout}>
-            Выход
-          </Nav.Link>
-        )}
+        <Navbar.Brand as={Link} to="/profile">
+          <img id="photo" src={photo} />
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );

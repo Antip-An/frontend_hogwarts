@@ -2,10 +2,8 @@ import { Image } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import slide1 from "../assets/logo.png";
 
-const Profile = () => (
-   
-    <p>profile</p>
-
+const HomePage = () => (
+    <p>Home for user</p>
 )
 
-export default Profile;
+export default HomePage;

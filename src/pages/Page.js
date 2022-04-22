@@ -1,22 +1,23 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useLocation } from "react-router";
+import useToken from "../hooks/useToken";
 
 const Page = () => {
-  const loggedIn = true;
-  const page = loggedIn ? (
+  const { loggedIn } = useToken(); 
+  console.log(loggedIn);
+  const location = useLocation();
+
+  const hideElements = !loggedIn && location.pathname === "/";
+
+  return (
     <div>
-      <Header />
+      {!hideElements ? <Header /> : null}
       <Outlet />
-      <Footer />
-    </div>
-  ) : (
-    <div>
-      <Outlet />
-      <Footer />
+      {!hideElements ? <Footer /> : null}
     </div>
   );
-  return page;
 };
 
 export default Page;
