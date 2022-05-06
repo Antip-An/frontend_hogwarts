@@ -9,7 +9,7 @@ const Page = () => {
   console.log(loggedIn);
   const location = useLocation();
 
-  const hideElements = !loggedIn && location.pathname === "/";
+  const hideElements = !loggedIn;
 
   return (
     <div>

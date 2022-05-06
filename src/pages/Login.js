@@ -20,7 +20,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
 
   const onLogin = async () => {
-    const response = await postData("/users/login", { email, password });
+    const response = await postData("/users/signin", { email, password });
 
     if (!response.success) {
       alert(response.message);

@@ -1,7 +1,7 @@
 import { Carousel, Caption, Button, Nav } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import "./css/home.css";
+import "./css/guesthome.css";
 import logo from "../assets/logo.png";
 import foto1 from "../assets/1.jpg";
 import foto2 from "../assets/2.jpg";
@@ -48,7 +48,7 @@ const Home = () => {
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <Button variant="light">Пробный урок</Button>
+          <Button variant="light" as={Link} to="/plesson" disabled={pathname === "/plesson"}>Пробный урок</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

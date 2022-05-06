@@ -19,9 +19,15 @@ const RegistrPage = () => {
   const [email, setEmail] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const onLogin = async () => {
-    const response = await postData("/users/login", { email, password });
+  const onRegistr = async () => {
+    if (password !== confirmPassword) {
+      alert("Всё плохо!!!")
+      return
+    }
+
+    const response = await postData("/users/signup", { email, login, password });
 
     if (!response.success) {
       alert(response.message);
@@ -69,17 +75,18 @@ const RegistrPage = () => {
                     onChange={(event) => setPassword(event.target.value)}
                   />
                 </Form.Group>
-                <Form.Group className="reg-fg">
+                {/* TODO: */}
+                <Form.Group className="reg-fg"> 
                   <Form.Label>Повторите пароль</Form.Label>
                   <Form.Control
                     type="password"
-                    id="password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
+                    id="confirm-password"
+                    value={confirmPassword}
+                    onChange={(event) => setConfirmPassword(event.target.value)}
                   />
                 </Form.Group>
               </Form>
-              <Button onClick={onLogin}>Зарегистрироваться</Button>
+              <Button onClick={onRegistr}>Зарегистрироваться</Button>
             </Card.Body>
           </Card>
         </Col>

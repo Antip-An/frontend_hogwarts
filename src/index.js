@@ -9,6 +9,7 @@ import LoginPage from "./pages/Login";
 import RegistrPage from "./pages/Registr";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
+import Courses from "./pages/Courses";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,8 +19,9 @@ ReactDOM.render(
           <Route index element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registr" element={<RegistrPage />} />
-          <Route path="/courses" element={<div>Courses</div>} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/myCourses" element={<div>MyCourses</div>} />
+          <Route path="/plesson" element={<div>P Lesson</div>} />
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>

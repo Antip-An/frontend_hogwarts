@@ -1,10 +1,10 @@
 import GuestHome from "./GuestHome";
 import UserHome from "./UserHome";
+import AdminHome from "./AdminHome";
 import { useLocation } from "react-router";
 import useToken from "../hooks/useToken";
-//import AdminHome from "./AdminHome";
 
-const Home = (props) => {
+const Home = () => {
   const { loggedIn } = useToken();
   console.log(loggedIn);
   const location = useLocation();
